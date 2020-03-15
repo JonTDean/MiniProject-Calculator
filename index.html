@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="index.js"></script> 
+  </head>
+  <body>
+    <!-- Top layer of the calculator. -->
+    <div id="calculator_shell">
+      <p>Calc Shell</p>
+      <!-- Contains any data that should be displayed to the user. -->
+      <div id="calculator_outputZone">
+        <!-- Used to capture information from the input zone and display to the user.-->
+        <div id="calculator_displayZone">
+        </div>
+        
+        <!-- Performs real time calculations as the input zone is filled. -->
+        <div id="calculator_realTimeOperations">
+        </div>
+      </div>
+  
+      <!--Used to contain the grid that stores anything that is used for input.-->
+      <div id="calculator_inputZone">       
+        <!--Used for log, factorial, modulo, exponents, inverse, absolute values, square, and Sq. roots.-->
+        <div id="calculator_advancedOperations">
+        </div>
+
+        <!-- Used to hold +, -, *, /-->
+        <div id="calculator_simpleOperations">
+        </div>
+
+        <!-- Used to hold numerical input, decimal notation, and parentheses-->
+        <div id="calculator_digitZone">
+        </div>
+
+        <!--Used to hold Equals, clear, and backspace.-->
+        <div id="calculator_operativeZone">
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

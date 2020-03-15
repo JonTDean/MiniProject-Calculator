@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div#calculator_shell{
+    /* Set the container size and position to center and be relative*/
+    /* 1em = 16px */
+    height: 30em;
+    width: 30em;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+    position: absolute;  
+    
+    /* Base Grid Settings */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 10fr ;
+
+    /* Shell Border Design */
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/*
+Sites Used:
+
+https://stackoverflow.com/questions/45884630/css-grid-is-it-possible-to-apply-color-to-grid-gaps
+https://stackoverflow.com/questions/13792755/show-border-grid-lines-only-between-elements/47914693#47914693
+https://css-tricks.com/why-ems/
+https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines
+https://stackoverflow.com/questions/50587865/how-to-make-grid-lines-visible
+https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/
+https://www.freecodecamp.org/news/how-to-center-things-with-style-in-css-dc87b7542689/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+https://css-tricks.com/snippets/css/complete-guide-grid/#grid-introduction
+*/
