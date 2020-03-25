@@ -1,27 +1,223 @@
-*{
+ /* General */
+ *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+html, body{
+    height: 100%
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Gotu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Gotu'), local('Gotu-Regular'), url(https://fonts.gstatic.com/s/gotu/v1/o-0FIpksx3QOpHoBiw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Share Tech';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Share Tech Regular'), local('ShareTech-Regular'), url(https://fonts.gstatic.com/s/sharetech/v9/7cHtv4Uyi5K0OeZ7bohU8H0JmA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Header CSS Style */
+header{
+    background-color: #000000; /* Registration Black */
+    color: #e4e4e4; /* Pure White */
+    position: fixed;
+    width: 100%;
+    display: inline-block;
+    line-height: 90px;
+    z-index: 2;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header p#header_left{
+    position: relative;
+    display: inline;
+    float: left;
+    font-family: 'Gotu', sans-serif;
+    font-size: 30px;
+}
+
+header p#header_middle{
+    position: relative;
+    margin: 0 auto;
+    display: inline;
+
+    font-family: 'Share Tech',  sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+
+    right:40px;
+}
+
+
+header img#header_right{
+    float: right;
+}
+
+/* Page Background */
+div#background{
+    background-color:#38434e; /* Wild Blue Yonder */
+    z-index: -1;
+    height: 100%;
+    min-height: 1200px;
+    overflow: scroll;
+}
+
+/* Calculator Styles */
 div#calculator_shell{
     /* Set the container size and position to center and be relative*/
     /* 1em = 16px */
     height: 30em;
     width: 30em;
-    text-align: center;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);  
-    position: absolute;  
+    position: relative;  
     
     /* Base Grid Settings */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 10fr ;
 
+    /* Color */
+    background-color:#93867f; /* Lavender Purple */
+
     /* Shell Border Design */
-    border: 2px solid black;
+    border: 2px solid #896279; /*  Chinese Violet */
+    border-radius: 10px; 
+    animation: glowFade 3s linear .1s  infinite;
+}
+
+ /* Calculator Header */
+div#calculator_outputZone{
+    /* Color */
+    background-color: #4e4a59; /* Quartz */
+
+    position: relative;
+    /* Measurements */
+    top: 5px;
+    height: 110%;
+    width: 98%;
+    margin: 0 auto;
+
+    /* Border Styles */
     border-radius: 10px;
+}
+
+/* Calculator Footer */
+div#calculator_inputZone{
+    background-color: #5e5768; /* Granite Gray */
+
+    position: relative;
+    /* Measurements */
+
+    top: 20px;
+    width: 98%;
+    height: 93%;
+    margin: 0 auto;
+
+    /* Border Styles */
+    border-radius: 10px;
+}
+/* Animations */
+
+
+@keyframes glowFade{ 
+    0% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0); /* Gunmetal */}
+    5% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.1), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.1), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.1); /* Gunmetal */}
+    10% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.2), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.2), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.2); /* Gunmetal */}
+    15% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.3), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.3), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.3); /* Gunmetal */}
+    20% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.4), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.4), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.4); /* Gunmetal */}
+    25% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.5), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.5), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.5); /* Gunmetal */}
+    30% {box-shadow: 
+        0 0 10px 15px rgba(190, 200, 255, 0.6), /* Chinese Violet */
+        0 0 10px 15px rgba(202, 182, 205, 0.6), /* Lavender Gray */
+        0 0 10px 15px rgba(224, 101, 208, 0.6); /* Gunmetal */}
+    35% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.7), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.7); /* Gunmetal */}
+    40% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
+    45% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
+    50% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 1), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 1), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 1); /* Gunmetal */}
+    55% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
+    60% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
+    65% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.7), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.7); /* Gunmetal */}
+    70% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.6), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.6), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.6); /* Gunmetal */}
+    75% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.5), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.5), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.5); /* Gunmetal */}
+    80% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.4), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.4), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.4); /* Gunmetal */}
+    85% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.3), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.3), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.3); /* Gunmetal */}
+    90% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.2), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.2), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.2); /* Gunmetal */}
+    95% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0.1), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0.1), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0.1); /* Gunmetal */}
+    100% {box-shadow: 
+        0 0 19px 28px rgba(190, 200, 255, 0), /* Chinese Violet */
+        0 0 15px 25px rgba(202, 182, 205, 0), /* Lavender Gray */
+        0 0 20px 10px rgba(224, 101, 208, 0); /* Gunmetal */}
 }
 
 /*
@@ -36,4 +232,32 @@ https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/
 https://www.freecodecamp.org/news/how-to-center-things-with-style-in-css-dc87b7542689/
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
 https://css-tricks.com/snippets/css/complete-guide-grid/#grid-introduction
+
+https://stackoverflow.com/questions/10865853/text-align-and-div-not-centered
+https://stackoverflow.com/questions/41130501/why-is-text-aligncenter-not-centering-all-the-elements-within-my-div
+https://stackoverflow.com/questions/6243070/css-text-align-center-not-working
+
+https://css-tricks.com/forums/topic/height100-doesnt-work/
+https://stackoverflow.com/questions/14553273/how-can-i-prevent-html-elements-from-overlapping-or-sliding-under-one-another
+https://codepen.io/sdthornton/pen/wBZdXq
+
+https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Inspect_and_select_colors
+https://www.tjvantoll.com/2012/02/20/css3-color-animations/
+https://css-tricks.com/controlling-css-animations-transitions-javascript/
+https://stackoverflow.com/questions/23985018/simple-css-animation-loop-fading-in-out-loading-text
+https://stackoverflow.com/questions/38895841/how-to-make-the-animation-smooth
+https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
+https://stackoverflow.com/questions/5608222/how-to-apply-box-shadow-on-all-four-sides
+*/
+
+/* Colors
+#adb2d3 Wild Blue Yonder
+#9c7ca5 Lavender Purple
+#896279 Chinese Violet
+#2d3047 Gunmetal
+#cab6cd Lavender Gray
+https://coolors.co/export/pdf/cab6cd-2d3047-896279-9c7ca5-adb2d3
+
+https://www.webfx.com/blog/images/assets/cdn.sixrevisions.com/0457-01-css-box-shadow-demo/demo.html
+https://ianlunn.github.io/Hover/
 */
