@@ -78,7 +78,7 @@ div#background{
 div#calculator_shell{
     /* Set the container size and position to center and be relative*/
     /* 1em = 16px */
-    height: 30em;
+    height: 40em;
     width: 30em;
     left: 50%;
     top: 50%;
@@ -100,21 +100,76 @@ div#calculator_shell{
 }
 
  /* Calculator Header */
-div#calculator_outputZone{
-    /* Color */
-    background-color: #4e4a59; /* Quartz */
 
-    position: relative;
-    /* Measurements */
-    top: 5px;
-    height: 110%;
-    width: 98%;
-    margin: 0 auto;
+    /* Output Zone */
+    div#calculator_outputZone{
+        /* Color */
+        background-color: #4e4a59; /* Quartz */
 
-    /* Border Styles */
-    border-radius: 10px;
-}
+        position: relative;
+        /* Measurements */
+        height: 113%;
+        width: 98%;
+        margin: 3px auto 0 auto;
 
+        /* Border Styles */
+        border-radius: 10px;
+    }
+
+    /* Display Zone */
+    div#calculator_displayZone{
+        /* Position */
+        margin: 3px auto 0 auto;
+
+        /* Measurements */
+        height: 55%;
+        width: 98%;
+
+        /* Color */
+        background-color: white;
+
+        /* Border Styles */
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    input#calculator_displayZoneInput{
+        /* Color */
+        background-color: black;
+        color: gray; /* Text */
+
+        /* Measurements */
+        height: 98%;
+        width: 99.5%;
+
+        /* Border */
+        border: 1px solid gray;
+        border-radius: 10px;
+        
+        /* Position */
+        left: .3%;
+        top: .6%;
+        position: relative;   
+    
+    }
+
+    /* Real Time Operations */
+    div#calculator_realTimeOperations{
+        /* Position */
+        margin: 0 auto;
+        margin: 3px auto 0 auto;
+
+        /* Measurements */
+        height: 39%;
+        width: 98%;
+
+        /* Color */
+        background-color: gray;
+
+        /* Border Styles */
+        border: 2px solid black;
+        border-radius: 10px;
+    }
 /* Calculator Footer */
 div#calculator_inputZone{
     background-color: #5e5768; /* Granite Gray */
@@ -122,50 +177,124 @@ div#calculator_inputZone{
     position: relative;
     /* Measurements */
 
-    top: 20px;
+    top: 25px;
     width: 98%;
     height: 93%;
     margin: 0 auto;
 
     /* Border Styles */
     border-radius: 10px;
+
+    /* Display type */
+    display: grid;
+    grid-template-areas: 
+    "a a a a"
+    "d d d b"
+    "d d d b"
+    "d d d b"
+    "c c c b";
 }
+
+div#calculator_advancedOperations{
+    /* Color */
+    background-color: blue;
+
+    /* Position */
+    margin: auto;
+
+    /* Measurements */
+    height: 98%;
+    width: 98%;
+
+    /* Border */
+    border: 2px solid black;
+    border-radius: 10px;
+
+    /* Display */
+    grid-area: a;
+}
+div#calculator_basicOperations{
+    /* Color */
+    background-color: blueviolet;
+    
+    /* Position */
+    margin: auto;
+
+    /* Measurements */
+    height: 98%;
+    width: 96%;
+
+    /* Border */
+    border: 2px solid black;
+    border-radius: 10px;
+
+    /* Display */
+    grid-area: b;
+}
+div#calculator_operativeCompleteZone{
+    /* Color */
+    background-color: yellow;
+
+    /* Position */
+    margin: auto;
+
+    /* Measurements */
+    height: 98%;
+    width: 97%;
+
+    /* Border */
+    border: 2px solid black;
+    border-radius: 10px;
+
+    /* Display */
+    grid-area: c;
+}
+div#calculator_digitZone{
+    /* Color */
+    background-color: red;
+
+    /* Position */
+    margin: auto;
+
+    /* Measurements */
+    height: 98%;
+    width: 97%;
+
+    /* Border */
+    border: 2px solid black;
+    border-radius: 10px;
+
+    /* Display */
+    grid-area: d;
+}
+
 /* Animations */
 
-
+/* Box Glow Fade */
 @keyframes glowFade{ 
     0% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0); /* Gunmetal */}
+        }
     5% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0.1), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.1), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.1); /* Gunmetal */}
+        }
     10% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0.2), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.2), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.2); /* Gunmetal */}
+        }
     15% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0.3), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.3), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.3); /* Gunmetal */}
+        }
     20% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.4), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.4), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.4); /* Gunmetal */}
+        0 0 10px 15px rgba(190, 200, 255, 0.4), /* Chinese Violet */}
     25% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0.5), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.5), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.5); /* Gunmetal */}
+        }
     30% {box-shadow: 
         0 0 10px 15px rgba(190, 200, 255, 0.6), /* Chinese Violet */
-        0 0 10px 15px rgba(202, 182, 205, 0.6), /* Lavender Gray */
-        0 0 10px 15px rgba(224, 101, 208, 0.6); /* Gunmetal */}
+        }
     35% {box-shadow: 
         0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.7), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.7); /* Gunmetal */}
+        }
     40% {box-shadow: 
         0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
         0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
@@ -248,6 +377,9 @@ https://stackoverflow.com/questions/23985018/simple-css-animation-loop-fading-in
 https://stackoverflow.com/questions/38895841/how-to-make-the-animation-smooth
 https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
 https://stackoverflow.com/questions/5608222/how-to-apply-box-shadow-on-all-four-sides
+
+https://stackoverflow.com/questions/43461457/css-grid-template-areas-property-not-aligning-grid-items
+https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas
 */
 
 /* Colors
@@ -260,4 +392,12 @@ https://coolors.co/export/pdf/cab6cd-2d3047-896279-9c7ca5-adb2d3
 
 https://www.webfx.com/blog/images/assets/cdn.sixrevisions.com/0457-01-css-box-shadow-demo/demo.html
 https://ianlunn.github.io/Hover/
+https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area
+*/
+
+
+/* 
+
+Color code the other divs and make sure theyre in the right place, and then organize everything.
+
 */

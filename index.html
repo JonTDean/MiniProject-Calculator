@@ -22,6 +22,7 @@
       <div id="calculator_outputZone">
         <!-- Used to capture information from the input zone and display to the user.-->
         <div id="calculator_displayZone">
+          <input id="calculator_displayZoneInput">
         </div>
         
         <!-- Performs real time calculations as the input zone is filled. -->
@@ -33,18 +34,56 @@
       <div id="calculator_inputZone">       
         <!--Used for log, factorial, modulo, exponents, inverse, absolute values, square, and Sq. roots.-->
         <div id="calculator_advancedOperations">
+          <!-- Actual Operations -->
+          <div id="operations">
+            <!-- Top Row for operations -->
+            <div id="operations_topRow">
+              <button> 1/x </button>
+              <button> x <sup> y </sup> </button>
+              <button> % </button>
+            </div>
+            <!-- Bottom Row for operations -->
+            <div id="operations _bottomRow">
+              <button> |x| </button>
+              <button> log(x) </button>
+              <button> x! </button>
+            </div>
+          </div>
+
+          <!-- Parentheses for grouping -->
+          <div id="grammar">
+            <button> ( </button>
+            <button> ) </button>
+            <button> . </button>
+          </div>
         </div>
 
         <!-- Used to hold +, -, *, /-->
-        <div id="calculator_simpleOperations">
+        <div id="calculator_basicOperations">
+          <button> + </button>
+          <button> - </button>
+          <button> x </button>
+          <button> / </button>
         </div>
 
         <!-- Used to hold numerical input, decimal notation, and parentheses-->
         <div id="calculator_digitZone">
+          <button id="digit_1"> 1 </button>
+          <button id="digit_2"> 2 </button>
+          <button id="digit_3"> 3 </button>
+          <button id="digit_4"> 4 </button>
+          <button id="digit_5"> 5 </button>
+          <button id="digit_6"> 6 </button>
+          <button id="digit_7"> 7 </button>
+          <button id="digit_8"> 8 </button>
+          <button id="digit_9"> 9 </button>
         </div>
 
         <!--Used to hold Equals, clear, and backspace.-->
-        <div id="calculator_operativeZone">
+        <div id="calculator_operativeCompleteZone">
+          <button> = </button>
+          <button> C </button>
+          <button> CE </button>
         </div>
       </div>
 
