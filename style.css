@@ -133,25 +133,30 @@ div#calculator_shell{
         border-radius: 10px;
     }
 
-    input#calculator_displayZoneInput{
-        /* Color */
-        background-color: black;
-        color: gray; /* Text */
+        /* Input Field */
+        input#calculator_inputField{
+            /* Color */
+            background-color: black;
+            color: gray; /* Text */
 
-        /* Measurements */
-        height: 98%;
-        width: 99.5%;
+            /* Measurements */
+            height: 95%;
+            width: 99%;
 
-        /* Border */
-        border: 1px solid gray;
-        border-radius: 10px;
-        
-        /* Position */
-        left: .3%;
-        top: .6%;
-        position: relative;   
-    
-    }
+            /* Border */
+            border: 1px solid gray;
+            border-radius: 10px;
+            
+            /* Position */
+            left: .5%;
+            top: 2.5%;
+            position: relative;
+            padding: 10px;
+            overflow: scroll;
+
+            /* Text Options */
+            font-size: 30px;
+        }
 
     /* Real Time Operations */
     div#calculator_realTimeOperations{
@@ -170,6 +175,29 @@ div#calculator_shell{
         border: 2px solid black;
         border-radius: 10px;
     }
+
+        /* Real Time Field */
+        input#calculator_realTimeField{
+            /* Position */
+            margin: 2px 2px 3px 2px;
+
+
+            /* Measurements */
+            height: 93%;
+            width: 99%;
+
+            /* Color */
+            color: gray;
+            background-color: white;
+
+            /* Border Styles */
+            border: 2px solid black;
+            border-radius: 10px;
+
+            /* Text Options */
+            font-size: 30px;
+        }
+
 /* Calculator Footer */
 div#calculator_inputZone{
     background-color: #5e5768; /* Granite Gray */
@@ -195,24 +223,122 @@ div#calculator_inputZone{
     "c c c b";
 }
 
-div#calculator_advancedOperations{
-    /* Color */
-    background-color: blue;
+    /* Advanced Operations Container */
+    div#calculator_advancedOperations{
+        /* Color */
+        background-color: blue;
 
-    /* Position */
-    margin: auto;
+        /* Position */
+        margin: auto;
 
-    /* Measurements */
-    height: 98%;
-    width: 98%;
+        /* Measurements */
+        height: 98%;
+        width: 98%;
+        padding: 1%;
 
-    /* Border */
-    border: 2px solid black;
-    border-radius: 10px;
+        /* Border */
+        border: 2px solid black;
+        border-radius: 10px;
 
-    /* Display */
-    grid-area: a;
-}
+        /* Display */
+        grid-area: a;
+        display: grid;
+        grid-row: repeat(2, 1fr);
+        grid-column: repeat(2, 1fr);
+        grid-template-areas: 
+        "o o o g"
+        "o o o g";
+
+    }
+
+    div#advancedOperations_container{
+        /* Measurements */
+        width:100%;
+
+        /* Display */
+        grid-area: o;
+        display: grid;
+        grid-row: repeat(2, 1fr);
+        grid-column: repeat(1, 1fr);
+        grid-template-areas: 
+        "t"
+        "b";
+    }
+    
+        /* Operations Top Row Container*/
+        section#advancedOperations_topRow{
+            /* Display */
+            grid-area: t;
+
+            display: grid;
+            grid-template-areas: 
+            "tr_i tr_e tr_p";
+
+        }
+            /* Top Row Buttons */
+            button#topRow_inverse{
+                grid-area: tr_i;
+            }
+            
+            button#topRow_exponent{
+                grid-area: tr_e;
+            }
+
+            button#topRow_percent{
+                grid-area: tr_p;
+            }
+
+        /* Operations Bottom Row Container*/
+        section#advancedOperations_bottomRow{
+            /* Display */
+            grid-area: b;
+
+            display: grid;
+            grid-template-areas: 
+            "br_av br_l br_f";
+        }
+            /* Operations Bottom Row Buttons */
+            button#bottomRow_absoluteValue{
+                grid-area: br_av;
+            }
+
+            button#bottomRow_logarithm{
+                grid-area: br_l;
+            }
+
+            button#bottomRow_factorial{
+                grid-area: br_f;
+            }
+
+    /* Right Side Buttons */
+        /* Parentheses Container */
+        section#advancedOperations_parentheses{
+            display: grid;
+            grid-template-areas: 
+            "lP rP";
+        }
+
+            /* Parentheses Buttons */
+            button#rightParenthese{
+                grid-area: rP;
+            }
+            button#leftParenthese{
+                grid-area: lP;
+            }
+
+        /* Decimal */
+        section#advancedOperations_decimal{
+            /* Display */
+            display: grid;
+            grid-template-areas: 
+            "d_d";
+        }
+
+            /* Decimal Button */
+            button#decimal_decimal{
+                grid-area: d_d;
+            }
+
 div#calculator_basicOperations{
     /* Color */
     background-color: blueviolet;
@@ -230,25 +356,10 @@ div#calculator_basicOperations{
 
     /* Display */
     grid-area: b;
+    display: grid;
 }
-div#calculator_operativeCompleteZone{
-    /* Color */
-    background-color: yellow;
 
-    /* Position */
-    margin: auto;
-
-    /* Measurements */
-    height: 98%;
-    width: 97%;
-
-    /* Border */
-    border: 2px solid black;
-    border-radius: 10px;
-
-    /* Display */
-    grid-area: c;
-}
+/* Digit Zone Container */
 div#calculator_digitZone{
     /* Color */
     background-color: red;
@@ -266,121 +377,196 @@ div#calculator_digitZone{
 
     /* Display */
     grid-area: d;
+    display: grid;
+    grid-template-areas: 
+    "dtr"
+    "dmr"
+    "dbr";
 }
+    /* Digit Rows */
+    section#digit_topRow{
+        /* Display */
+        grid-area: dtr;
+        display: grid;
+        grid-template-areas:
+        "one two three" ;
+    }
+    section#digit_middleRow{
+        /* Display */
+        grid-area: dmr;
+        display: grid;
+        grid-template-areas:
+        "four five six" ;
+    }
+    section#digit_bottomRow{
+        /* Display */
+        grid-area: dbr;
+        display: grid;
+        grid-template-areas:
+        "seven eight nine" ;
+    }
+        /* Digits */
+        /* Button 1 */
+        button#digit_1{
+            grid-area: one;
+        }
 
+        /* Button 2 */
+        button#digit_2{
+            grid-area: two;
+        }
+
+        /* Button 3 */
+        button#digit_3{
+            grid-area: three;
+        }
+        
+        /* Button 4 */
+        button#digit_4{
+            grid-area: four;
+        }
+        
+        /* Button 5 */
+        button#digit_5{
+            grid-area: five;
+        }
+        
+        /* Button 6 */
+        button#digit_6{
+            grid-area: six;
+        }
+        
+        /* Button 7 */
+        button#digit_7{
+            grid-area: seven;
+        }
+        
+        /* Button 8 */
+        button#digit_8{
+            grid-area: eight;
+        }
+        
+        /* Button 9 */
+        button#digit_9{
+            grid-area: nine;
+        }
+
+
+/* Operative Complete Zone Container */
+div#calculator_operativeCompleteZone{
+    /* Color */
+    background-color: yellow;
+
+    /* Position */
+    margin: auto;
+
+    /* Measurements */
+    height: 98%;
+    width: 97%;
+
+    /* Border */
+    border: 2px solid black;
+    border-radius: 10px;
+
+    /* Display */
+    grid-area: c;
+    display: grid;
+    grid-template-areas: 
+    "oc_e oc_c oc_ce";
+}
+    /* Buttons */
+    button#operativeComplete_equals{
+        grid-area: oc_e;
+    }
+
+    button#operativeComplete_clear{
+        grid-area: oc_c;
+    }
+
+    button#operativeComplete_clearEntry{
+        grid-area: oc_ce;
+    }
 /* Animations */
+    /* Box Glow Fade */
+    @keyframes glowFade{ 
+        0% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0), /* Chinese Violet */
+            }
+        5% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.1), /* Chinese Violet */
+            }
+        10% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.2), /* Chinese Violet */
+            }
+        15% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.3), /* Chinese Violet */
+            }
+        20% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.4), /* Chinese Violet */}
+        25% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.5), /* Chinese Violet */
+            }
+        30% {box-shadow: 
+            0 0 10px 15px rgba(190, 200, 255, 0.6), /* Chinese Violet */
+            }
+        35% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
+            }
+        40% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
+        45% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
+        50% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 1), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 1), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 1); /* Gunmetal */}
+        55% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
+        60% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
+        65% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.7), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.7); /* Gunmetal */}
+        70% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.6), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.6), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.6); /* Gunmetal */}
+        75% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.5), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.5), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.5); /* Gunmetal */}
+        80% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.4), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.4), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.4); /* Gunmetal */}
+        85% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.3), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.3), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.3); /* Gunmetal */}
+        90% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.2), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.2), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.2); /* Gunmetal */}
+        95% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0.1), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0.1), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0.1); /* Gunmetal */}
+        100% {box-shadow: 
+            0 0 19px 28px rgba(190, 200, 255, 0), /* Chinese Violet */
+            0 0 15px 25px rgba(202, 182, 205, 0), /* Lavender Gray */
+            0 0 20px 10px rgba(224, 101, 208, 0); /* Gunmetal */}
+    }
 
-/* Box Glow Fade */
-@keyframes glowFade{ 
-    0% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0), /* Chinese Violet */
-        }
-    5% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.1), /* Chinese Violet */
-        }
-    10% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.2), /* Chinese Violet */
-        }
-    15% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.3), /* Chinese Violet */
-        }
-    20% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.4), /* Chinese Violet */}
-    25% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.5), /* Chinese Violet */
-        }
-    30% {box-shadow: 
-        0 0 10px 15px rgba(190, 200, 255, 0.6), /* Chinese Violet */
-        }
-    35% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
-        }
-    40% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
-    45% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
-    50% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 1), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 1), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 1); /* Gunmetal */}
-    55% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.9), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.9), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.9); /* Gunmetal */}
-    60% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.8), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.8), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.8); /* Gunmetal */}
-    65% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.7), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.7), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.7); /* Gunmetal */}
-    70% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.6), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.6), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.6); /* Gunmetal */}
-    75% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.5), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.5), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.5); /* Gunmetal */}
-    80% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.4), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.4), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.4); /* Gunmetal */}
-    85% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.3), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.3), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.3); /* Gunmetal */}
-    90% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.2), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.2), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.2); /* Gunmetal */}
-    95% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0.1), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0.1), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0.1); /* Gunmetal */}
-    100% {box-shadow: 
-        0 0 19px 28px rgba(190, 200, 255, 0), /* Chinese Violet */
-        0 0 15px 25px rgba(202, 182, 205, 0), /* Lavender Gray */
-        0 0 20px 10px rgba(224, 101, 208, 0); /* Gunmetal */}
-}
 
-/*
-Sites Used:
-
-https://stackoverflow.com/questions/45884630/css-grid-is-it-possible-to-apply-color-to-grid-gaps
-https://stackoverflow.com/questions/13792755/show-border-grid-lines-only-between-elements/47914693#47914693
-https://css-tricks.com/why-ems/
-https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines
-https://stackoverflow.com/questions/50587865/how-to-make-grid-lines-visible
-https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/
-https://www.freecodecamp.org/news/how-to-center-things-with-style-in-css-dc87b7542689/
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
-https://css-tricks.com/snippets/css/complete-guide-grid/#grid-introduction
-
-https://stackoverflow.com/questions/10865853/text-align-and-div-not-centered
-https://stackoverflow.com/questions/41130501/why-is-text-aligncenter-not-centering-all-the-elements-within-my-div
-https://stackoverflow.com/questions/6243070/css-text-align-center-not-working
-
-https://css-tricks.com/forums/topic/height100-doesnt-work/
-https://stackoverflow.com/questions/14553273/how-can-i-prevent-html-elements-from-overlapping-or-sliding-under-one-another
-https://codepen.io/sdthornton/pen/wBZdXq
-
-https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Inspect_and_select_colors
-https://www.tjvantoll.com/2012/02/20/css3-color-animations/
-https://css-tricks.com/controlling-css-animations-transitions-javascript/
-https://stackoverflow.com/questions/23985018/simple-css-animation-loop-fading-in-out-loading-text
-https://stackoverflow.com/questions/38895841/how-to-make-the-animation-smooth
-https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
-https://stackoverflow.com/questions/5608222/how-to-apply-box-shadow-on-all-four-sides
-
-https://stackoverflow.com/questions/43461457/css-grid-template-areas-property-not-aligning-grid-items
-https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas
-*/
 
 /* Colors
 #adb2d3 Wild Blue Yonder
@@ -390,9 +576,6 @@ https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas
 #cab6cd Lavender Gray
 https://coolors.co/export/pdf/cab6cd-2d3047-896279-9c7ca5-adb2d3
 
-https://www.webfx.com/blog/images/assets/cdn.sixrevisions.com/0457-01-css-box-shadow-demo/demo.html
-https://ianlunn.github.io/Hover/
-https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area
 */
 
 
