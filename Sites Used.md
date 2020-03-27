@@ -34,3 +34,5 @@ https://www.webfx.com/blog/images/assets/cdn.sixrevisions.com/0457-01-css-box-sh
 https://ianlunn.github.io/Hover/
 https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area
 https://www.quora.com/How-do-you-add-a-scroll-bar-in-HTML
+
+https://medium.com/@js_tut/the-complete-css-flex-box-tutorial-d17971950bdc
